@@ -7,20 +7,35 @@
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Careers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+  <style>
+    #banner {
+      height: 360px;
+      width: 100%;
+      object-fit: cover;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="wrapper">
-    <h1>Acme Careers</h1>
-    <img class="banner" src="../static/banner.jpg" alt="motivational quote">
+  <div class="container">
+    <h1 class="text-center mt-2 mb-4">Acme Careers</h1>
+    <img class="img-fluid" id="banner" src="../static/banner.jpg" alt="motivational quote">
 
-    <h2>About Acme Corporation</h2>
-    <p>
+    <h2 class="text-center mt-2 mb-4">About Acme Corporation</h2>
+    <p class="lead">
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione in fugiat eius inventore repellendus recusandae
       sunt, doloremque exercitationem quo distinctio, possimus dignissimos culpa ducimus non voluptates quasi deserunt
       optio! Deleniti doloribus aliquid inventore? Odio ut dolorum nesciunt itaque dolores perspiciatis voluptatum
       explicabo! Architecto sint ratione accusamus, dolor eveniet dolorem earum!
     </p>
+
+    <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+    <div class="text-center">
+      <button class="btn btn-primary btn-lg">Contact Us</button>
+    </div>
+    <small class="mt-4">&copy; Acme Corporation</small>
   </div>
 </body>
 
