@@ -1,9 +1,23 @@
 {% extends "layout.html" %}
 
 {% block content %}
-  <p>{{ job_details.title }}</p>
-  <p>{{ job_details.location }}</p>
-  <p>{{ job_details.responsibilities }}</p>
-  <p>{{ job_details.requirements }}</p>
-  <p>{{ job_details.salary }}</p>
+<div class="container">
+  <h1 class="text-center my-4">Application Form</h1>
+  <h3>{{ job_details.title }}</h3>
+  <p class="lead">{{ job_details.location }}</p>
+  <h4>Responsibilities</h4>
+  <ul>
+    {% for responsibility in job_details.responsibilities.split('\n') %}
+    <li>{{ responsibility }}</li>
+    {% endfor %}
+  </ul>
+  <h4>Requirements</h4>
+  <ol>
+    {% for requirement in job_details.requirements.split('\n') %}
+    <li>{{ requirement }}</li>
+    {% endfor %}
+  </ol>
+  <h4>Salary</h4>
+  <p>₹{{ job_details.salary | locale }}</p>
+</div>
 {% endblock %}
