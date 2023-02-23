@@ -1,4 +1,19 @@
-from sqlalchemy import create_engine
+import os
 
-# sqlalchemy engine connect to mysql
-engine = create_engine('mysql+pymysql://salkfo8d9lyat3udfss5:pscale_pw_tqBXiUF11z9Zd1Kx18FYHdQqJtKVTy5yfrSkZahYIa8@ap-south.connect.psdb.cloud/acme-corporation-careers')
+from dotenv import load_dotenv
+from sqlalchemy import create_engine, text
+
+load_dotenv()
+
+db_conn_str = f'mysql+pymysql://{os.getenv("PS_USERNAME")}:{os.getenv("PASSWORD")}@{os.getenv("HOST")}/{os.getenv("DATABASE")}?charset=utf8mb4'
+
+engine = create_engine(
+    db_conn_str,
+    connect_args={
+        'ssl': {'ssl_ca': "/etc/ssl/cert.pem"}
+    },
+)
+
+def load_jobs():
+    with engine.connect() as conn:
+        return conn.execute(text("SELECT * FROM jobs")).mappings().all()
