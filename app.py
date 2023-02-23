@@ -34,5 +34,5 @@ def page_not_found(e):
 
 @app.template_filter('locale')
 def _jinja2_locale_filter(value):
-    locale.setlocale(locale.LC_ALL, '')  # set the user's preferred locale
+    locale.setlocale(locale.LC_ALL, 'en_IN')
     return locale.format_string("%d", value, grouping=True)
