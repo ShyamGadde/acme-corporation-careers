@@ -14,6 +14,6 @@ engine = create_engine(
     },
 )
 
-def load_jobs():
+def get_all_jobs():
     with engine.connect() as conn:
-        return map(dict, conn.execute(text("SELECT * FROM jobs")).mappings())
+        return conn.execute(text("SELECT * FROM jobs"))
