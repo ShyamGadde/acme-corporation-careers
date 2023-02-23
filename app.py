@@ -1,3 +1,5 @@
+import locale
+
 from flask import Flask, jsonify, render_template
 
 from database import get_all_jobs, get_job_details
@@ -24,6 +26,13 @@ def apply(job_id):  # sourcery skip: use-named-expression
         return render_template("apply.html", job_details=job_details)
     return render_template("404.html")
 
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template("404.html"), 404
+
+
+@app.template_filter('locale')
+def _jinja2_locale_filter(value):
+    locale.setlocale(locale.LC_ALL, '')  # set the user's preferred locale
+    return locale.format_string("%d", value, grouping=True)
