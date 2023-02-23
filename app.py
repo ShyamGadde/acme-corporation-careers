@@ -23,3 +23,7 @@ def apply(job_id):  # sourcery skip: use-named-expression
     if job_details:
         return render_template("apply.html", job_details=job_details)
     return render_template("404.html")
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template("404.html"), 404
