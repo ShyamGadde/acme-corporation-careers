@@ -19,4 +19,6 @@ def api_jobs():
 
 @app.route('/job/<int:job_id>')
 def apply(job_id):
-    return render_template("apply.html", job_details=get_job_details(job_id))
+    if job_details := get_job_details(job_id):
+        return render_template("apply.html", job_details=job_details)
+    return render_template("404.html")
