@@ -31,16 +31,19 @@
     </div>
   </nav>
   <img class="img-fluid" id="banner" src="../static/banner.jpg" alt="motivational quote">
-  <div class="container mt-5">
+  <div class="container mt-4">
     <h1 class="text-center mt-2 mb-4">{{company_name}} Careers</h1>
 
-    <h2 class="text-center mt-2 mb-4">About {{company_name}} </h2>
-    <p class="lead">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione in fugiat eius inventore repellendus recusandae
-      sunt, doloremque exercitationem quo distinctio, possimus dignissimos culpa ducimus non voluptates quasi deserunt
-      optio! Deleniti doloribus aliquid inventore? Odio ut dolorum nesciunt itaque dolores perspiciatis voluptatum
-      explicabo! Architecto sint ratione accusamus, dolor eveniet dolorem earum!
-    </p>
+    <div class="row">
+      <div class="col-md-7">
+        <p class="lead">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis ducimus molestias ab voluptatem voluptatum odit, odio pariatur accusantium nam veritatis in nihil tempore incidunt, hic assumenda aut reiciendis enim magnam autem mollitia unde iusto deleniti? Maiores, est ipsum deleniti recusandae iure repellendus earum ipsam, optio eum autem quia commodi temporibus? Excepturi fuga et laborum commodi iusto error explicabo. Enim eveniet dicta sed quidem porro ratione odio voluptatibus, quaerat distinctio, similique quo nostrum aliquid minus rerum fugit, veritatis molestias qui. Sapiente minus eos est atque eaque ipsa! Officiis, enim molestias earum ipsum veritatis tempore repudiandae ipsam a aliquid velit ab ad!
+        </p>
+      </div>
+      <div class="d-none d-md-block col-md-5 pb-3">
+        <img class="rounded" height="350px" src="../static/people-working.jpg" alt="People working and joyful">
+      </div>
+    </div>
 
     <h2 class="text-center mt-2 mb-4">Job Openings</h2>
     <div>
@@ -63,7 +66,7 @@
       </div>
       {% endfor %}
       <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
+        <a href="mailto:acme-corporation-careers@outlook.com?subject=Inquiry%20regarding%20Job%20openings&body=Name%3A%20%3Cinsert-your-name%3E%0D%0A%0D%0A%3Cquery%3E" class="btn btn-primary btn-lg">Contact Us</a>
       </div>
     </div>
     <div class="container">
