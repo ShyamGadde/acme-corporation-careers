@@ -17,3 +17,7 @@ engine = create_engine(
 def get_all_jobs():
     with engine.connect() as conn:
         return conn.execute(text("SELECT * FROM jobs"))
+
+def get_job_details(job_id):
+    with engine.connect() as conn:
+        return conn.execute(text("SELECT * FROM jobs WHERE id = :job_id"), {"job_id": job_id}).first()
