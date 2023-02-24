@@ -9,15 +9,17 @@ db_conn_str = f'mysql+pymysql://{os.getenv("PS_USERNAME")}:{os.getenv("PASSWORD"
 
 engine = create_engine(
     db_conn_str,
-    connect_args={
-        'ssl': {'ssl_ca': "/etc/ssl/cert.pem"}
-    },
+    connect_args={"ssl": {"ssl_ca": "/etc/ssl/cert.pem"}},
 )
+
 
 def get_all_jobs():
     with engine.connect() as conn:
         return conn.execute(text("SELECT * FROM jobs"))
 
+
 def get_job_details(job_id):
     with engine.connect() as conn:
-        return conn.execute(text("SELECT * FROM jobs WHERE id = :job_id"), {"job_id": job_id}).first()
+        return conn.execute(
+            text("SELECT * FROM jobs WHERE id = :job_id"), {"job_id": job_id}
+        ).first()
