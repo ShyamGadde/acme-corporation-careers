@@ -2,7 +2,7 @@
 
 {% block content %}
 <div class="container">
-  <h1 class="text-center my-4">Application Form</h1>
+  <h2 class="text-center my-4">Job Details</h2>
   <h3>{{ job_details.title }}</h3>
   <p class="lead">{{ job_details.location }}</p>
   <h4>Responsibilities</h4>
@@ -19,5 +19,9 @@
   </ol>
   <h4>Salary</h4>
   <p>₹{{ job_details.salary | locale }}</p>
+</div>
+
+<div class="container">
+  <h2 class="text-center my-4">Application Form</h2>
 </div>
 {% endblock %}
