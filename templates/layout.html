@@ -6,7 +6,7 @@
   <meta name="viewport"
     content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Acme Corporation Careers</title>
+  <title>{{ company_name }} Careers</title>
   <link rel="icon" href="../static/logo.png">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
@@ -16,8 +16,8 @@
   <nav class="navbar shadow-sm sticky-top bg-white">
     <div class="container-fluid">
       <a class="navbar-brand fw-semibold" href="/">
-        <img src="../static/logo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
-        Acme Corporation
+        <img src="/static/logo.png" alt="Logo" height="30" class="d-inline-block align-text-top">
+        {{ company_name }}
       </a>
     </div>
   </nav>
@@ -34,7 +34,7 @@
         <li class="nav-item"><a href="/api/jobs" class="nav-link px-2 text-muted">API</a></li>
         <li class="nav-item"><a href="#!" class="nav-link px-2 text-muted">About</a></li>
       </ul>
-      <p class="text-center text-muted">© 2023 Acme Corporation</p>
+      <p class="text-center text-muted">© 2023 {{ company_name }} </p>
     </footer>
   </div>
 </body>
