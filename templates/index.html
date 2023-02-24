@@ -32,7 +32,7 @@
         <h3 class="card-title">{{ job.title }}</h3>
         <p class="card-text">{{ job.location }}</p>
         {% if job.salary %}
-        <p class="card-text"><b>Salary:</b> ₹{{ job.salary | locale }}</p>
+        <p class="card-text"><b>Salary:</b> ₹{{ job.salary | indian_number }}</p>
         {% endif %}
         <a href="/job/{{job.id}}" class="btn btn-outline-primary">Apply</a>
       </div>

@@ -18,7 +18,7 @@
     {% endfor %}
   </ol>
   <h4>Salary</h4>
-  <p>₹{{ job_details.salary | locale }}</p>
+  <p>₹{{ job_details.salary | indian_number }}</p>
 </div>
 
 <div class="container">

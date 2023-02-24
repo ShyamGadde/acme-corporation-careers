@@ -37,8 +37,9 @@ def page_not_found(e):
     return render_template("404.html"), 404
 
 
-@app.template_filter("locale")
+@app.template_filter("indian_number")
 def _jinja2_locale_filter(value):
-    locale.setlocale(locale.LC_ALL, 'en_IN.UTF-8')
-    # locale.setlocale(locale.LC_ALL, "")
-    return locale.format_string("%d", value, grouping=True)
+    digits = list(str(value))
+    for i in reversed(range(-3, -len(digits), -2)):
+        digits.insert(i, ',')
+    return ''.join(digits)
